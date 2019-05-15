@@ -1,0 +1,26 @@
+
+db:
+  image: mysql:8
+  environment:
+    MYSQL_ROOT_PASSWORD: r00tp@55
+    MYSQL_DATABASE: example_db
+    MYSQL_USER: example_db_user
+    MYSQL_PASSWORD: example_db_pass
+#  ports:
+#    - "3306:3306"
+  volumes:
+   - ./db:/docker-entrypoint-initdb.d
+   - ./db/data:/var/lib/mysql
+
+tomcat:
+  image: tomcat:8.5.40-jre8-alpine
+  environment:
+    JDBC_URL: jdbc:mysql://db:3306/example_db
+    JDBC_USER: example_db_user
+    JDBC_PASS: example_db_pass
+  ports:
+   - "9080:8080"
+  volumes:
+   - ./tomcat/webapps:/usr/local/tomcat/webapps
+  links:
+    - db
