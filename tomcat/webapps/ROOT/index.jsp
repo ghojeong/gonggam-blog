@@ -1,1 +1,1 @@
-<% response.sendRedirect("/db-webapp"); %>
+<% response.sendRedirect("/gonggam"); %>
