@@ -32,7 +32,7 @@ docker-compose down
 
 ## Tomcat
 
-- http://localhost:8080/example-webapp/
+- http://localhost:8080/db-webapp/
   - DB 테이블과 데이터를 출력해주는 JSP 페이지
 
 ## Adminer
