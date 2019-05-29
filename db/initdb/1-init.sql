@@ -1,3 +1,5 @@
+ALTER DATABASE board DEFAULT CHARACTER SET utf8;
+
 USE board;
 
 CREATE TABLE member (
@@ -24,18 +26,18 @@ CREATE TABLE article_content (
 
 INSERT INTO member (memberid, name, password, regdate)
 VALUES
-("id1", "name1", "pw1", now() ),
-("id2", "name2", "pw2", now() ),
-("id3", "name3", "pw3", now() );
+("아이디1", "이름1", "비밀번호1", now() ),
+("아이디2", "이름2", "비밀번호2", now() ),
+("아이디3", "이름3", "비밀번호3", now() );
 
 INSERT INTO article (writer_id, writer_name, title, regdate, moddate, read_cnt)
 VALUES
-("id1", "name1", "title1", now(), now(), 1 ),
-("id2", "name2", "title2", now(), now(), 2 ),
-("id3", "name3", "title3", now(), now(), 3 );
+("아이디1", "이름1", "제목1", now(), now(), 1 ),
+("아이디2", "이름2", "제목2", now(), now(), 2 ),
+("아이디3", "이름3", "제목3", now(), now(), 3 );
 
 INSERT INTO article_content (article_no, content)
 VALUES
-(1, "content1"),
-(2, "content2"),
-(3, "content3");
+(1, "본문1"),
+(2, "본문2"),
+(3, "본문3");
