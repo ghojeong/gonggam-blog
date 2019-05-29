@@ -20,7 +20,7 @@ services:
     image: adminer
     container_name: adminer
     ports:
-      - 8080:8080
+      - 9080:8080
 
   web:
     image: tomcat:8.5
@@ -30,7 +30,7 @@ services:
       JDBC_USER: jspexam
       JDBC_PASS: jsppw
     ports:
-      - "9080:8080"
+      - "8080:8080"
     volumes:
       - ./tomcat/webapps:/usr/local/tomcat/webapps
     links:
