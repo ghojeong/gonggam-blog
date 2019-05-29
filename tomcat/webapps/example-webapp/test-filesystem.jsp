@@ -1,8 +1,9 @@
-<%@ page language="java" %>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ page import="java.io.File" %>
 <%@ page import="java.util.*" %>
 <html><body><pre><%
 
+request.setCharacterEncoding("utf-8");
 String dir = request.getParameter("dir");
 if (dir == null || dir.length() == 0) {
 	ServletContext context = session.getServletContext();

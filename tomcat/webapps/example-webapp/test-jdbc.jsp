@@ -1,4 +1,4 @@
-<%@ page language="java" %><%!
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%><%!
 
 private String getResultSet(java.sql.ResultSet resultSet, boolean displayTables) throws Exception {
 	StringBuffer sb = new StringBuffer();
@@ -24,6 +24,7 @@ private String getResultSet(java.sql.ResultSet resultSet, boolean displayTables)
 %>
 <html><body><pre><%
 
+	request.setCharacterEncoding("utf-8");
 	String table = request.getParameter("tab");
 
 	// For MySQL

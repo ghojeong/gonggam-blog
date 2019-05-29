@@ -1,4 +1,4 @@
-<%@ page language="java" %>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ page import="javax.naming.*, java.sql.Connection, javax.sql.DataSource" %>
 <html><body><pre><%
 

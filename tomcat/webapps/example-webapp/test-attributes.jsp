@@ -1,4 +1,5 @@
-<%@ page language="java" %><%
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%><%
+request.setCharacterEncoding("utf-8");
 if (request.getParameter("output") != null) {
 	out.println("<html><body><pre>");
 	printAttributes(pageContext);
@@ -24,18 +25,22 @@ public String getAttributes(PageContext page) throws java.io.IOException {
 	sb.append("Request Parameters\n******************\n");
 	for (java.util.Enumeration<java.lang.String> names = request.getParameterNames(); names.hasMoreElements(); ) {
 		String name = names.nextElement();
+		request.setCharacterEncoding("utf-8");
 		String value = request.getParameter(name);
 		sb.append(getString(name, value));
 	}
 
 	sb.append("\n\nRequest Headers\n***************\n");
+	request.setCharacterEncoding("utf-8");
 	for (java.util.Enumeration<java.lang.String> names = request.getHeaderNames(); names.hasMoreElements(); ) {
 		String name = names.nextElement();
+		request.setCharacterEncoding("utf-8");
 		String value = request.getHeader(name);
 		sb.append(getString(name, value));
 	}
 
 	sb.append("\n\nRequest Cookies\n***************\n");
+	request.setCharacterEncoding("utf-8");
 	for (Cookie cookie : request.getCookies()) {
 		sb.append("Path    : '" + cookie.getPath() + "'\n");
 		sb.append("Name    : '" + cookie.getName() + "'\n");

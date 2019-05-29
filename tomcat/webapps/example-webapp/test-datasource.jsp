@@ -1,4 +1,4 @@
-<%@ page language="java" %><%!
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%><%!
 
 private String getResultSet(java.sql.ResultSet resultSet, boolean displayTables) throws Exception {
 	StringBuffer sb = new StringBuffer();
@@ -28,6 +28,7 @@ private String getResultSet(java.sql.ResultSet resultSet, boolean displayTables)
 	String showTables = "show tables"; // For MySQL
 	// String showTables = "select from tab"; // For Oracle
 
+	request.setCharacterEncoding("utf-8");
 	String table = request.getParameter("tab");
 
 	javax.naming.Context ctx = new javax.naming.InitialContext();
