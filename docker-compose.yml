@@ -2,6 +2,7 @@ version: '3'
 services:
   db:
     image: mysql:5.6
+    container_name: mysql-5.6
     environment:
       MYSQL_ROOT_PASSWORD: r00tp@55
       MYSQL_DATABASE: example_db
@@ -14,8 +15,15 @@ services:
       - ./db/data:/var/lib/mysql
     restart: always
 
+  adminer:
+    image: adminer
+    container_name: adminer
+    ports:
+      - 8080:8080
+
   web:
     image: tomcat:8.5
+    container_name: tomcat-8.5
     environment:
       JDBC_URL: jdbc:mysql://db:3306/example_db
       JDBC_USER: example_db_user
