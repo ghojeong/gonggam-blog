@@ -34,9 +34,9 @@ private String getResultSet(java.sql.ResultSet resultSet, boolean displayTables)
 	//String jdbcUser = System.getProperty("JDBC_USER");
 	//String jdbcPass = System.getProperty("JDBC_PASS");
 
-	String jdbcUrl  = "jdbc:mysql://db:3306/example_db";
-	String jdbcUser = "example_db_user";
-	String jdbcPass = "example_db_pass";
+	String jdbcUrl  = "jdbc:mysql://db:3306/board";
+	String jdbcUser = "jspexam";
+	String jdbcPass = "jsppw";
 
 	java.sql.Connection conn = java.sql.DriverManager.getConnection(jdbcUrl, jdbcUser, jdbcPass);
 	System.out.println("conn: " + conn);

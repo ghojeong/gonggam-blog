@@ -7,7 +7,7 @@
 	Context envCtx = (Context) initCtx.lookup("java:comp/env");
 	if (envCtx != null) {
 
-		DataSource ds = (DataSource) envCtx.lookup("jdbc/example_db");
+		DataSource ds = (DataSource) envCtx.lookup("jdbc/board");
 		if (ds != null) {
 			out.println("DataSource: " + ds.toString());
 

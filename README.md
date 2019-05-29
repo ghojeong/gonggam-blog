@@ -44,7 +44,7 @@ mysql> show databases;
 +--------------------+
 | Database           |
 +--------------------+
-| example_db         |
+| board              |
 | information_schema |
 | ...                |
 +--------------------+

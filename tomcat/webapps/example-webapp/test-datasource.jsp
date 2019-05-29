@@ -23,7 +23,7 @@ private String getResultSet(java.sql.ResultSet resultSet, boolean displayTables)
 %>
 <html><body><pre><%
 
-	String jndiUrl = "java:comp/env/jdbc/example_db";
+	String jndiUrl = "java:comp/env/jdbc/board";
 
 	String showTables = "show tables"; // For MySQL
 	// String showTables = "select from tab"; // For Oracle

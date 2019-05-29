@@ -4,10 +4,10 @@ services:
     image: mysql:5.6
     container_name: mysql-5.6
     environment:
-      MYSQL_ROOT_PASSWORD: r00tp@55
-      MYSQL_DATABASE: example_db
-      MYSQL_USER: example_db_user
-      MYSQL_PASSWORD: example_db_pass
+      MYSQL_ROOT_PASSWORD: rootpw
+      MYSQL_DATABASE: board
+      MYSQL_USER: jspexam
+      MYSQL_PASSWORD: jsppw
     ports:
       - "3306:3306"
     volumes:
@@ -25,9 +25,9 @@ services:
     image: tomcat:8.5
     container_name: tomcat-8.5
     environment:
-      JDBC_URL: jdbc:mysql://db:3306/example_db
-      JDBC_USER: example_db_user
-      JDBC_PASS: example_db_pass
+      JDBC_URL: jdbc:mysql://db:3306/board
+      JDBC_USER: jspexam
+      JDBC_PASS: jsppw
     ports:
       - "9080:8080"
     volumes:
