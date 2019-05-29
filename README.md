@@ -34,6 +34,8 @@ docker-compose down
 
 - http://localhost:8080/db-webapp/
   - DB 테이블과 데이터를 출력해주는 JSP 페이지
+- http://localhost:8080/gonggam
+  - 공감블로그 페이지
 
 ## Adminer
 
