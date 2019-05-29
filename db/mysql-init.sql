@@ -1,39 +1,41 @@
--- drop database if exists example_docker_db;
--- create database example_docker_db;
-use board;
+USE board;
 
---
--- Table structure for table `example_table`
---
+CREATE TABLE member (
+    memberid varchar(50) PRIMARY KEY,
+    name varchar(50) NOT NULL,
+    password varchar(10) NOT NULL,
+    regdate datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT="board member";
 
-DROP TABLE IF EXISTS `example_table`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `example_table` (
-  `id`        bigint(20)   NOT NULL,
-  `INS_DATE`  datetime     NOT NULL,
-  `NAME`      varchar(255) NOT NULL,
-  `VALUE`     varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
+CREATE TABLE article (
+    article_no int auto_increment PRIMARY KEY,
+    writer_id varchar(50) NOT NULL,
+    writer_name varchar(50) NOT NULL,
+    title varchar(255) NOT NULL,
+    regdate datetime NOT NULL,
+    moddate datetime NOT NULL,
+    read_cnt int
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT="board article";
 
---
--- Dumping data for table `EXAMPLE_TABLE`
---
+CREATE TABLE article_content (
+    article_no int PRIMARY KEY,
+    content text
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT="board article_content";
 
-LOCK TABLES `example_table` WRITE;
-/*!40000 ALTER TABLE `example_table` DISABLE KEYS */;
-INSERT INTO `example_table` (id, INS_DATE, NAME, VALUE)
+INSERT INTO member (memberid, name, password, regdate)
 VALUES
-( 1, now(), 'example-1', 'value-1'),
-( 2, now(), 'example-2', 'value-2'),
-( 3, now(), 'example-3', 'value-3'),
-( 4, now(), 'example-4', 'value-4'),
-( 5, now(), 'example-5', 'value-5'),
-( 6, now(), 'example-6', 'value-6'),
-( 7, now(), 'example-7', 'value-7'),
-( 8, now(), 'example-8', 'value-8'),
-( 9, now(), 'example-9', 'value-9');
-/*!40000 ALTER TABLE `example_table` ENABLE KEYS */;
-UNLOCK TABLES;
+("id1", "name1", "pw1", now() ),
+("id2", "name2", "pw2", now() ),
+("id3", "name3", "pw3", now() );
+
+INSERT INTO article (writer_id, writer_name, title, regdate, moddate, read_cnt)
+VALUES
+("id1", "name1", "title1", now(), now(), 1 ),
+("id2", "name2", "title2", now(), now(), 2 ),
+("id3", "name3", "title3", now(), now(), 3 );
+
+INSERT INTO article_content (article_no, content)
+VALUES
+(1, "content1"),
+(2, "content2"),
+(3, "content3");
