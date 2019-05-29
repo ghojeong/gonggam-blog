@@ -1,10 +1,26 @@
 # gonggam-blog
+
 2019-06-29(토)에 열리는 공감 세미나를 위해 개발한 블로그이다.
 
-## Docker Compose
+## Docker
 
+### Docker Clear
+
+```sh
+docker stop $(docker ps -a -q) ;
+docker rm $(docker ps -a -q) ;
+docker rmi $(docker images -q) --force ;
+docker system prune;
+docker system prune --volumes;
+
+kill -kill `lsof -t -i tcp:3000`
 ```
+
+### Docker Compose
+
+```sh
 # start
+docker-compose up --build
 docker-compose up -d
 
 # view logs
@@ -15,11 +31,12 @@ docker-compose down
 ```
 
 ## Tomcat
- - http://localhost:9080/example-webapp/
+
+- http://localhost:9080/example-webapp/
 
 ## MySQL
 
-```
+```sh
 docker exec -it docker-tomcat-mysql_db_1 /bin/bash
 mysql -u root -p
 
@@ -34,4 +51,5 @@ mysql> show databases;
 ```
 
 ### MySQL data
- - map volumes to local directory `./db/data`
+
+- map volumes to local directory `./db/data`
