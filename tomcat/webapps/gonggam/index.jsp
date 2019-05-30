@@ -7,7 +7,7 @@
 <title>회원제 게시판 예제</title>
 </head>
 <body>
-<%-- 
+<%--
 <c:if test="${! empty authUser}">
 	${authUser.name}님, 안녕하세요.
 	<a href="logout.do">[로그아웃하기]</a>
@@ -22,6 +22,7 @@
 	CT: ${authUser.name}님, 안녕하세요.
 	<a href="logout.do">[로그아웃하기]</a>
 	<a href="changePwd.do">[암호변경하기]</a>
+	<a href="article/list.do">[게시글]</a>
 </u:isLogin>
 <u:notLogin>
 	CT: <a href="join.do">[회원가입하기]</a>
