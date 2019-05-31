@@ -32,8 +32,10 @@ uri="http://java.sun.com/jsp/jstl/core" %>
           <div class="field">
             <label>새 암호</label>
             <input placeholder="새 암호" type="password" name="newPwd" />
-            <div class="err">            <c:if test="${errors.confirmPassword}">확인을 입력하세요.<br><br></c:if>
+            <div class="err">
+              <c:if test="${errors.confirmPassword}">확인을 입력하세요.<br><br></c:if>
               <c:if test="${errors.newPwd}">새 암호를 입력하세요.</c:if>
+            </div>
           </div>
           <br>
           <button class="ui teal button" type="submit" value="암호 변경">암호 변경</button>
