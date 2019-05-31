@@ -11,7 +11,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
     <style type="text/css">
       <jsp:include page="css/common.css"/>
-      <jsp:include page="css/joinForm.css"/>
+      <jsp:include page="css/commonForm.css"/>
     </style>
   </head>
   <body>
