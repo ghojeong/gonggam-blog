@@ -13,8 +13,8 @@
   <body>
     <div class="ui middle aligned center aligned grid max-height">
       <div class="six wide column">
-        <h1 class="ui header">암호를 변경했습니다..</h1>
-        <br />
+        <h1 class="ui header">암호를 변경했습니다.</h1>
+        <br>
         <div
           tabindex="0"
           class="massive ui animated button"

@@ -37,7 +37,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
               ${param.title}
             </textarea>
           </div>
-          <br />
+          <br>
           <button class="ui teal button" type="submit" value="새 글 등록">
             새 글 등록
           </button>
