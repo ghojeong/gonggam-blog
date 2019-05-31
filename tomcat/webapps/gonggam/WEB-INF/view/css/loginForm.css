@@ -8,5 +8,6 @@ body > .grid {
   max-width: 450px;
 }
 .err-msg {
-  color: red !important;
+  color: red;
+  font-size: 1.5rem;
 }

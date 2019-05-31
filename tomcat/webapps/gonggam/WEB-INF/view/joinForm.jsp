@@ -9,28 +9,60 @@ uri="http://java.sun.com/jsp/jstl/core" %>
       href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css"
     />
     <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+    <style type="text/css">
+      <jsp:include page="css/joinForm.css"/>
+    </style>
   </head>
   <body>
-    <form action="join.do" method="post">
-      <p>
-        아이디:<br /><input type="text" name="id" value="${param.id}" />
-        <c:if test="${errors.id}">ID를 입력하세요.</c:if>
-        <c:if test="${errors.duplicateId}">이미 사용중인 아이디입니다.</c:if>
-      </p>
-      <p>
-        이름:<br /><input type="text" name="name" value="${param.name}" />
-        <c:if test="${errors.name}">이름을 입력하세요.</c:if>
-      </p>
-      <p>
-        암호:<br /><input type="password" name="password" />
-        <c:if test="${errors.password}">암호를 입력하세요.</c:if>
-      </p>
-      <p>
-        확인:<br /><input type="password" name="confirmPassword" />
-        <c:if test="${errors.confirmPassword}">확인을 입력하세요.</c:if>
-        <c:if test="${errors.notMatch}">암호와 확인이 일치하지 않습니다.</c:if>
-      </p>
-      <input type="submit" value="가입" />
-    </form>
+    <div class="ui middle aligned center aligned grid max-height">
+      <div class="six wide column">
+        <h1 class="ui header">회원가입</h1>
+        <form class="ui form" action="join.do" method="post">
+          <div class="field">
+            <label>아이디</label>
+            <input
+              placeholder="아이디"
+              type="text"
+              name="id"
+              value="${param.id}"
+            />
+            <div class="err">
+                <c:if test="${errors.id}">아이디를 입력하세요.</c:if>
+                <c:if test="${errors.duplicateId}"
+                  >이미 사용중인 아이디입니다.</c:if
+                >
+            </div>
+          </div>
+          <div class="field">
+            <label>이름</label>
+            <input
+              placeholder="이름"
+              type="text"
+              name="name"
+              value="${param.name}"
+            />
+            <div class="err">
+                <c:if test="${errors.name}">이름을 입력하세요.</c:if>
+            </div>
+          </div>
+          <div class="field">
+            <label>암호</label>
+            <input placeholder="암호" type="password" name="password" />
+            <div class="err">
+                <c:if test="${errors.password}">암호를 입력하세요.</c:if>
+            </div>
+          </div>
+          <div class="field">
+            <label>확인</label>
+            <input placeholder="확인" type="password" name="confirmPassword" />
+            <div class="err">            <c:if test="${errors.confirmPassword}">확인을 입력하세요.<br><br></c:if>
+              <c:if test="${errors.notMatch}"
+                >암호와 확인이 일치하지 않습니다.</c:if
+              ></div>
+          </div>
+          <button class="ui teal button" type="submit">가입</button>
+        </form>
+      </div>
+    </div>
   </body>
 </html>

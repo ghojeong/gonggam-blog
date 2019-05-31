@@ -1,0 +1,11 @@
+.field > label {
+    float: left;
+}
+
+.err {
+    color: red;
+}
+
+.max-height {
+    height: 100%;
+}
