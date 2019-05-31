@@ -11,54 +11,79 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
   </head>
   <body>
-    <table border="1">
-      <tr>
-        <td colspan="4"><a href="write.do">[게시글쓰기]</a></td>
-      </tr>
-      <tr>
-        <td>번호</td>
-        <td>제목</td>
-        <td>작성자</td>
-        <td>조회수</td>
-      </tr>
-      <c:if test="${articlePage.hasNoArticles()}">
-        <tr>
-          <td colspan="4">게시글이 없습니다.</td>
-        </tr>
-      </c:if>
-      <c:forEach var="article" items="${articlePage.content}">
-        <tr>
-          <td>${article.number}</td>
-          <td>
-            <a
-              href="read.do?no=${article.number}&pageNo=${articlePage.currentPage}"
-            >
-              <c:out value="${article.title}" />
-            </a>
-          </td>
-          <td>${article.writer.name}</td>
-          <td>${article.readCount}</td>
-        </tr>
-      </c:forEach>
-      <c:if test="${articlePage.hasArticles()}">
-        <tr>
-          <td colspan="4">
+    <div class="ui middle aligned center aligned grid">
+      <div class="fifteen wide column">
+        <div
+          tabindex="0"
+          class="ui vertical animated button"
+          onclick="location.href='write.do'"
+        >
+          <div class="visible content">게시글쓰기</div>
+          <div class="hidden content">
+            <i class="pencil alternate icon"></i>
+          </div>
+        </div>
+
+        <table class="ui celled table">
+          <thead>
+            <tr>
+              <th>번호</th>
+              <th>제목</th>
+              <th>작성자</th>
+              <th>조회수</th>
+            </tr>
+          </thead>
+          <tbody>
+            <c:if test="${articlePage.hasNoArticles()}">
+              <tr>
+                <td colspan="4">게시글이 없습니다.</td>
+              </tr>
+            </c:if>
+            <c:forEach var="article" items="${articlePage.content}">
+              <tr>
+                <td>${article.number}</td>
+                <td>
+                  <a
+                    href="read.do?no=${article.number}&pageNo=${articlePage.currentPage}"
+                  >
+                    <c:out value="${article.title}" />
+                  </a>
+                </td>
+                <td>${article.writer.name}</td>
+                <td>${article.readCount}</td>
+              </tr>
+            </c:forEach>
+          </tbody>
+        </table>
+
+        <c:if test="${articlePage.hasArticles()}">
+          <div class="ui pagination menu">
             <c:if test="${articlePage.startPage > 5}">
-              <a href="list.do?pageNo=${articlePage.startPage - 5}">[이전]</a>
+              <a
+                class="icon item"
+                href="list.do?pageNo=${articlePage.startPage - 5}"
+              >
+                <i class="left chevron icon"></i>
+              </a>
             </c:if>
             <c:forEach
               var="pNo"
               begin="${articlePage.startPage}"
               end="${articlePage.endPage}"
             >
-              <a href="list.do?pageNo=${pNo}">[${pNo}]</a>
+              <a class="item" href="list.do?pageNo=${pNo}">${pNo}</a>
             </c:forEach>
             <c:if test="${articlePage.endPage < articlePage.totalPages}">
-              <a href="list.do?pageNo=${articlePage.startPage + 5}">[다음]</a>
+              <a
+                class="icon item"
+                href="list.do?pageNo=${articlePage.startPage + 5}"
+              >
+                <i class="right chevron icon"></i>
+              </a>
             </c:if>
-          </td>
-        </tr>
-      </c:if>
-    </table>
+          </div>
+        </c:if>
+      </div>
+    </div>
   </body>
 </html>
