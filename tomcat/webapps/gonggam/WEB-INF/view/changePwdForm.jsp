@@ -15,10 +15,20 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     </style>
   </head>
   <body>
+    <jsp:include page="headerMenu.jsp" />
     <div class="ui middle aligned center aligned grid max-height">
       <div class="six wide column">
         <h1 class="ui header">암호 변경</h1>
+        <div class="ui vertical animated negative button" tabindex="0"
+          onclick="location.href='article/list.do'"
+          style="float:right">
+            <div class="visible content">취소</div>
+          <div class="hidden content">
+            <i class="x icon"></i>
+          </div>
+        </div>
         <form class="ui form" action="changePwd.do" method="post">
+          <button class="ui positive button" type="submit" value="암호 변경" style="float:right">암호 변경</button>
           <div class="field">
             <label>현재 암호</label>
             <input placeholder="현재 암호" type="password" name="curPwd" />
@@ -38,7 +48,6 @@ uri="http://java.sun.com/jsp/jstl/core" %>
             </div>
           </div>
           <br>
-          <button class="ui teal button" type="submit" value="암호 변경">암호 변경</button>
         </form>
       </div>
     </div>

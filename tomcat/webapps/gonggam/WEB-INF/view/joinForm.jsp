@@ -61,8 +61,16 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                 >암호와 확인이 일치하지 않습니다.</c:if
               ></div>
           </div>
-          <button class="ui teal button" type="submit">가입</button>
+          <button class="ui positive button" type="submit">가입</button>
         </form>
+        <div class="ui vertical animated negative button" tabindex="0"
+          onclick="location.href='login.do'"
+          style="margin-top:10px">
+            <div class="visible content">취소</div>
+          <div class="hidden content">
+            <i class="x icon"></i>
+          </div>
+        </div>
       </div>
     </div>
   </body>

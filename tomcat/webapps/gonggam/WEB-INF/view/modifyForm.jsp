@@ -19,7 +19,18 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     <div class="ui middle aligned center aligned grid max-height">
       <div class="twelve wide column">
         <h1 class="ui header">게시글 수정</h1>
+        <div class="ui vertical animated negative button" tabindex="0"
+          onclick="location.href='list.do'"
+          style="float:right">
+            <div class="visible content">취소</div>
+          <div class="hidden content">
+            <i class="x icon"></i>
+          </div>
+        </div>
         <form class="ui form" action="modify.do" method="post">
+          <button class="ui positive button" type="submit" value="글 수정" style="float:right">
+            글 수정
+          </button>
           <input type="hidden" name="no" value="${modReq.articleNumber}" />
           <div class="field">
             <div class="ui label">
@@ -46,9 +57,6 @@ uri="http://java.sun.com/jsp/jstl/core" %>
             </textarea>
           </div>
           <br />
-          <button class="ui teal button" type="submit" value="글 수정">
-            글 수정
-          </button>
         </form>
       </div>
     </div>

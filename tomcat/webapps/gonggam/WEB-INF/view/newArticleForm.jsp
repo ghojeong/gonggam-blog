@@ -19,7 +19,19 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     <div class="ui middle aligned center aligned grid max-height">
       <div class="twelve wide column">
         <h1 class="ui header">게시글 쓰기</h1>
+        <div class="ui vertical animated negative button" tabindex="0"
+          onclick="location.href='list.do'"
+          style="float:right">
+            <div class="visible content">취소</div>
+          <div class="hidden content">
+            <i class="x icon"></i>
+          </div>
+        </div>
         <form class="ui form" action="write.do" method="post">
+          <button class="ui positive button" type="submit" value="새 글 등록"
+            style="float:right">
+            새 글 등록
+          </button>
           <div class="field">
             <label>제목</label>
             <input
@@ -39,9 +51,6 @@ uri="http://java.sun.com/jsp/jstl/core" %>
             </textarea>
           </div>
           <br>
-          <button class="ui teal button" type="submit" value="새 글 등록">
-            새 글 등록
-          </button>
         </form>
       </div>
     </div>

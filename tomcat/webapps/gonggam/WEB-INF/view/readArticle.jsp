@@ -55,7 +55,7 @@ tagdir="/WEB-INF/tags" %>
           <c:if test="${authUser.id == articleData.article.writer.id}">
             <div
               tabindex="0"
-              class="ui vertical animated button"
+              class="ui vertical animated positive button"
               onclick="location.href='modify.do?no=${articleData.article.number}'"
             >
               <div class="visible content">게시글수정</div>
@@ -65,7 +65,7 @@ tagdir="/WEB-INF/tags" %>
             </div>
             <div
               tabindex="0"
-              class="ui vertical animated button"
+              class="ui vertical animated negative button"
               onclick="location.href='delete.do?no=${articleData.article.number}'"
             >
               <div class="visible content">게시글삭제</div>
