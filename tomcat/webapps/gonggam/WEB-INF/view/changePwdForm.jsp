@@ -49,6 +49,12 @@ uri="http://java.sun.com/jsp/jstl/core" %>
           </div>
           <br>
         </form>
+        <div class="ui vertical animated negative button" tabindex="0">
+          <div class="visible content">회원탈퇴</div>
+          <div class="hidden content">
+            <i class="trash alternate outline icon"></i>
+          </div>
+        </div>
       </div>
     </div>
   </body>

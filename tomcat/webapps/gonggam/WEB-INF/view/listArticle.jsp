@@ -72,7 +72,14 @@ uri="http://java.sun.com/jsp/jstl/core" %>
               begin="${articlePage.startPage}"
               end="${articlePage.endPage}"
             >
-              <a class="item" href="list.do?pageNo=${pNo}">${pNo}</a>
+              <c:choose>
+                <c:when test="${articlePage.currentPage == pNo}">
+                  <a class="active item" href="list.do?pageNo=${pNo}">${pNo}</a>
+                </c:when>
+                <c:otherwise>
+                  <a class="item" href="list.do?pageNo=${pNo}">${pNo}</a>
+                </c:otherwise>
+              </c:choose>
             </c:forEach>
             <c:if test="${articlePage.endPage < articlePage.totalPages}">
               <a
