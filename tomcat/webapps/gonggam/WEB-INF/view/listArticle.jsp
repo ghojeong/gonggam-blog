@@ -9,6 +9,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
       href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css"
     />
     <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+    <style type="text/css"><jsp:include page="css/listArticle.css"/></style>
   </head>
   <body>
     <div class="ui middle aligned center aligned grid">
@@ -27,10 +28,10 @@ uri="http://java.sun.com/jsp/jstl/core" %>
         <table class="ui celled table">
           <thead>
             <tr>
-              <th>번호</th>
-              <th>제목</th>
-              <th>작성자</th>
-              <th>조회수</th>
+              <th style="width:5%">번호</th>
+              <th style="width:80%">제목</th>
+              <th style="width:10%">작성자</th>
+              <th style="width:5%">조회수</th>
             </tr>
           </thead>
           <tbody>
@@ -40,14 +41,10 @@ uri="http://java.sun.com/jsp/jstl/core" %>
               </tr>
             </c:if>
             <c:forEach var="article" items="${articlePage.content}">
-              <tr>
+              <tr onclick="location.href='read.do?no=${article.number}&pageNo=${articlePage.currentPage}'">
                 <td>${article.number}</td>
                 <td>
-                  <a
-                    href="read.do?no=${article.number}&pageNo=${articlePage.currentPage}"
-                  >
-                    <c:out value="${article.title}" />
-                  </a>
+                  <c:out value="${article.title}" />
                 </td>
                 <td>${article.writer.name}</td>
                 <td>${article.readCount}</td>

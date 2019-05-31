@@ -19,16 +19,16 @@ tagdir="/WEB-INF/tags" %>
         <table class="ui definition table">
           <tbody>
             <tr>
+              <td>제목</td>
+              <td><c:out value="${articleData.article.title}" /></td>
+            </tr>
+            <tr>
               <td>번호</td>
               <td>${articleData.article.number}</td>
             </tr>
             <tr>
               <td class="collapsing">작성자</td>
               <td>${articleData.article.writer.name}</td>
-            </tr>
-            <tr>
-              <td>제목</td>
-              <td><c:out value="${articleData.article.title}" /></td>
             </tr>
             <tr>
               <td>내용</td>
