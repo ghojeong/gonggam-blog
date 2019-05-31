@@ -9,10 +9,14 @@ uri="http://java.sun.com/jsp/jstl/core" %>
       href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css"
     />
     <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
-    <style type="text/css"><jsp:include page="css/listArticle.css"/></style>
+    <style type="text/css">
+      <jsp:include page="css/common.css"/>
+      <jsp:include page="css/listArticle.css"/>
+    </style>
   </head>
   <body>
-    <div class="ui middle aligned center aligned grid">
+    <jsp:include page="headerMenu.jsp" />
+    <div class="ui middle aligned center aligned grid max-height">
       <div class="fifteen wide column">
         <div
           tabindex="0"
@@ -24,7 +28,6 @@ uri="http://java.sun.com/jsp/jstl/core" %>
             <i class="pencil alternate icon"></i>
           </div>
         </div>
-
         <table class="ui celled table">
           <thead>
             <tr>
@@ -41,7 +44,9 @@ uri="http://java.sun.com/jsp/jstl/core" %>
               </tr>
             </c:if>
             <c:forEach var="article" items="${articlePage.content}">
-              <tr onclick="location.href='read.do?no=${article.number}&pageNo=${articlePage.currentPage}'">
+              <tr
+                onclick="location.href='read.do?no=${article.number}&pageNo=${articlePage.currentPage}'"
+              >
                 <td>${article.number}</td>
                 <td>
                   <c:out value="${article.title}" />
@@ -52,7 +57,6 @@ uri="http://java.sun.com/jsp/jstl/core" %>
             </c:forEach>
           </tbody>
         </table>
-
         <c:if test="${articlePage.hasArticles()}">
           <div class="ui pagination menu">
             <c:if test="${articlePage.startPage > 5}">

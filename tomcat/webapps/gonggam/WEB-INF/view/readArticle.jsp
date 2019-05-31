@@ -13,6 +13,7 @@ tagdir="/WEB-INF/tags" %>
     <style type="text/css"><jsp:include page="css/common.css"/></style>
   </head>
   <body>
+    <jsp:include page="headerMenu.jsp" />
     <div class="ui middle aligned center aligned grid max-height">
       <div class="twelve wide column">
         <h1 class="ui header">게시글 읽기</h1>

@@ -15,6 +15,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     </style>
   </head>
   <body>
+    <jsp:include page="headerMenu.jsp" />
     <div class="ui middle aligned center aligned grid max-height">
       <div class="twelve wide column">
         <h1 class="ui header">게시글 쓰기</h1>

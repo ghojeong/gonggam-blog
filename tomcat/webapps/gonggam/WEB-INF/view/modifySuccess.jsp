@@ -11,6 +11,7 @@
     <style type="text/css"><jsp:include page="css/common.css"/></style>
   </head>
   <body>
+    <jsp:include page="headerMenu.jsp" />
     <div class="ui middle aligned center aligned grid max-height">
       <div class="six wide column">
         <h1 class="ui header">게시글을 수정했습니다.</h1>
