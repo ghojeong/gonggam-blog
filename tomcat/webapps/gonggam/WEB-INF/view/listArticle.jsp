@@ -45,6 +45,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
             </c:if>
             <c:forEach var="article" items="${articlePage.content}">
               <tr
+                class="tr-clickable"
                 onclick="location.href='read.do?no=${article.number}&pageNo=${articlePage.currentPage}'"
               >
                 <td>${article.number}</td>
@@ -54,6 +55,9 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                 <td>${article.writer.name}</td>
                 <td>${article.readCount}</td>
               </tr>
+            </c:forEach>
+            <c:forEach var="i" begin="1" end="${10 - articlePage.content.size()}" step="1">
+              <tr><td>-</td><td>-</td><td>-</td><td>-</td></tr>
             </c:forEach>
           </tbody>
         </table>
